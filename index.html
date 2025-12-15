@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexum Solis LLC - AI-Powered Software Innovation</title>
+    <meta name="description"
+        content="Nexum Solis LLC builds innovative software products powered by cutting-edge AI technology.">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0a0a0b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --text-primary: #e8e8e8;
+            --text-secondary: #888;
+            --accent: #c0c0c0;
+            --accent-glow: rgba(192, 192, 192, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Subtle grid background */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Orbital glow effect */
+        .orbital-glow {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+        }
+
+        .logo-mark {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 0;
+        }
+
+        .logo-container {
+            margin-bottom: 3rem;
+        }
+
+        .logo-container img {
+            width: 280px;
+            height: 280px;
+            object-fit: contain;
+            filter: brightness(1.1);
+            margin-left: -20px;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        h1 span {
+            font-weight: 600;
+        }
+
+        .tagline {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.1em;
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
+        }
+
+        .description {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 540px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* Divider */
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            margin: 4rem 0;
+        }
+
+        /* Focus areas */
+        .focus {
+            padding: 2rem 0 6rem;
+        }
+
+        .focus h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .focus-item {
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+
+        .focus-item:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .focus-item h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .focus-item p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 4rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-email {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 2px;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-email:hover {
+            border-color: var(--text-primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-legal {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-location {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.1em;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero>* {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .logo-container {
+            animation-delay: 0.1s;
+        }
+
+        h1 {
+            animation-delay: 0.2s;
+        }
+
+        .tagline {
+            animation-delay: 0.3s;
+        }
+
+        .description {
+            animation-delay: 0.4s;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .hero {
+                min-height: 70vh;
+                padding: 3rem 0;
+            }
+
+            .logo-container img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+    <div class="orbital-glow"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo-mark">Est. 2025</div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="logo-container">
+                    <img src="logo-1024.png" alt="Nexum Solis Logo">
+                </div>
+                <h1>Nexum<span>Solis</span> LLC</h1>
+                <p class="tagline">Software & AI Innovation</p>
+                <p class="description">
+                    We build apps and SaaS, things we want to use ourselves. That's it.
+                </p>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="focus">
+                <h2>What We Do</h2>
+                <div class="focus-grid">
+                    <div class="focus-item">
+                        <h3>AI Stuff</h3>
+                        <p>AI where it's useful. Not everywhere.</p>
+                    </div>
+                    <div class="focus-item">
+                        <h3>SaaS</h3>
+                        <p>Monthly, yearly, you know the drill.</p>
+                    </div>
+                    <div class="focus-item">
+                        <h3>Apps</h3>
+                        <p>Mobile, web, whatever makes sense.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact">
+                <h2>Get in Touch</h2>
+                <a href="mailto:contact@nexumsolis.com" class="contact-email">contact@nexumsolis.com</a>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-legal">© 2025 Nexum Solis LLC. All rights reserved.</div>
+                <div class="footer-location">Wyoming, USA</div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
