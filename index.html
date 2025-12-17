@@ -96,23 +96,23 @@
 
         /* Hero */
         .hero {
-            min-height: 80vh;
+            min-height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 4rem 0;
+            padding: 2rem 0;
         }
 
         .logo-container {
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
         }
 
         .logo-container img {
-            width: 280px;
-            height: 280px;
+            width: 180px;
+            height: 180px;
             object-fit: contain;
             filter: brightness(1.1);
-            margin-left: -20px;
+            margin-left: -15px;
         }
 
         h1 {
@@ -132,7 +132,7 @@
             font-size: 0.85rem;
             color: var(--text-secondary);
             letter-spacing: 0.1em;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
             text-transform: uppercase;
         }
 
@@ -149,12 +149,12 @@
             width: 60px;
             height: 1px;
             background: linear-gradient(90deg, var(--accent), transparent);
-            margin: 4rem 0;
+            margin: 2rem 0;
         }
 
         /* Focus areas */
         .focus {
-            padding: 2rem 0 6rem;
+            padding: 1rem 0 2rem;
         }
 
         .focus h2 {
@@ -196,9 +196,130 @@
             font-weight: 300;
         }
 
+        /* Products */
+        .products {
+            padding: 1rem 0;
+        }
+
+        .products h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-card {
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .product-card:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .product-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .product-header h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .product-badge {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.75rem;
+            background: rgba(192, 192, 192, 0.1);
+            border: 1px solid rgba(192, 192, 192, 0.2);
+            border-radius: 3px;
+            color: var(--accent);
+        }
+
+        .product-badge.development {
+            background: rgba(255, 193, 7, 0.1);
+            border-color: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+        }
+
+        .product-badge.opensource {
+            background: rgba(40, 167, 69, 0.1);
+            border-color: rgba(40, 167, 69, 0.2);
+            color: #28a745;
+        }
+
+        .product-subtitle {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .product-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .product-link {
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 2px;
+            transition: border-color 0.3s ease;
+        }
+
+        .product-link:hover {
+            border-color: var(--text-primary);
+        }
+
+        /* About */
+        .about {
+            padding: 1rem 0;
+        }
+
+        .about h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-weight: 300;
+            max-width: 600px;
+        }
+
         /* Contact */
         .contact {
-            padding: 4rem 0;
+            padding: 2rem 0;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -325,8 +446,54 @@
                 <h1>Nexum<span>Solis</span> LLC</h1>
                 <p class="tagline">Software & AI Innovation</p>
                 <p class="description">
-                    We build apps and SaaS, things we want to use ourselves. That's it.
+                    We design and build digital products that solve real problems — for ourselves first, then for everyone.
                 </p>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="products">
+                <h2>Our Products</h2>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>Outfiiit</h3>
+                        <span class="product-badge">Private Beta</span>
+                    </div>
+                    <p class="product-subtitle">AI-Powered Virtual Try-On</p>
+                    <p class="product-description">
+                        Try on clothes virtually before you buy. Mix and match pieces from your wardrobe or discover new styles with AI-generated outfit combinations.
+                    </p>
+                    <div class="product-links">
+                        <a href="mailto:contact@nexumsolis.com?subject=Outfiiit Early Access Request" class="product-link">Request early access</a>
+                        <a href="https://outfiiit.com" class="product-link" target="_blank">outfiiit.com</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>Codename: Crazy Coconut</h3>
+                        <span class="product-badge development">In Development</span>
+                    </div>
+                    <p class="product-subtitle">Unified AI Creative Hub</p>
+                    <p class="product-description">
+                        One interface for all major AI image and video models. Pay-as-you-go at API prices — no subscriptions, no expiring credits, no lock-in. Built for power users who know what they want.
+                    </p>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3>Set2Tracks</h3>
+                        <span class="product-badge opensource">Open Source</span>
+                    </div>
+                    <p class="product-subtitle">DJ Set Analyzer</p>
+                    <p class="product-description">
+                        Identify every track in a DJ set automatically. Built for music lovers and vinyl diggers. Currently open source, with a potential comeback in the works.
+                    </p>
+                    <div class="product-links">
+                        <a href="https://github.com/nexumsolis" class="product-link" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
             </section>
 
             <div class="divider"></div>
@@ -335,18 +502,27 @@
                 <h2>What We Do</h2>
                 <div class="focus-grid">
                     <div class="focus-item">
-                        <h3>AI Stuff</h3>
-                        <p>AI where it's useful. Not everywhere.</p>
+                        <h3>AI Integration</h3>
+                        <p>We implement artificial intelligence where it adds genuine value, not as a buzzword.</p>
                     </div>
                     <div class="focus-item">
-                        <h3>SaaS</h3>
-                        <p>Monthly, yearly, you know the drill.</p>
+                        <h3>SaaS Products</h3>
+                        <p>Subscription-based tools designed for long-term use and continuous improvement.</p>
                     </div>
                     <div class="focus-item">
-                        <h3>Apps</h3>
-                        <p>Mobile, web, whatever makes sense.</p>
+                        <h3>Mobile & Web Apps</h3>
+                        <p>Cross-platform applications built with modern technologies.</p>
                     </div>
                 </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="about">
+                <h2>About</h2>
+                <p class="about-text">
+                    Nexum Solis LLC is a software development studio founded in 2025 and registered in Wyoming, USA. We focus on AI-powered consumer applications, with a particular emphasis on computer vision and practical automation.
+                </p>
             </section>
 
             <section class="contact">
